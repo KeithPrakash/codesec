@@ -1,8 +1,6 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import Favourite from './Favourite'
-
-
+import  { useEffect, useState } from 'react'
+import Nav from '../components/Nav'
 
 const  categories=[
     {id:"1",category:"Beef"},
@@ -16,13 +14,11 @@ const [data, setData]=useState([])
 const [selected ,setSelected] =useState("Beef");
 
 useEffect( ()=>{
-
 const getData= async()=>{
 try{
     const response =  await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${selected}`);
     console.log(response.data)
     setData(response.data)
-
 }catch(e){
 console.log(e)
 }
@@ -32,15 +28,13 @@ getData();
 },[selected])
   return (
   <div>
-  <nav className='flex p-7 justify-around shadow-md'>
-    
-    <div>LOGO</div>     <div className='flex gap-10 text-3xl font-semibold'> <div>Home</div> <div>Favourite</div></div>    <>Logout</></nav>
+ <Nav/>
 
 <div className='p-20 flex gap-5  mx-auto'>
 {
   categories.map((item ,index)=>(
 
-      <div key={index}      onClick={()=>setSelected(item.category)}     className={`py-3 px-5 rounded-full border-slate-400  text-slate ${item.category === selected ? 'bg-pink-500 text-white' : 'bg-white'}`}> {item.category} </div>
+      <div key={index}      onClick={()=>setSelected(item.category)}     className={`py-3 px-5 rounded-full border-2  border-pink-500 text-slate ${item.category === selected ? 'bg-pink-500 text-white' : 'bg-white text-pink-500'}`}> {item.category} </div>
   ))
 }
 </div>
@@ -55,9 +49,7 @@ getData();
             </div>
     ))   : <div>no items</div>
 }
-
 </div>
-
   </div>
   
 

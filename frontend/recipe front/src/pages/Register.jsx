@@ -1,15 +1,12 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
     <div className='h-[100dvh] bg-slate-300 flex justify-center items-center'>
        <div className='p-10  md:p-20 rounded-xl flex flex-col gap-8  bg-white '> 
-
         <div className='text-center text-2xl w-full'>  logo</div>
-
-        <div className='flex flex-col gap-6'>
-            
+        <div className='flex flex-col gap-6'>         
             <h2 className='block font-semibold text-2xl'>Register</h2>
 
             <div className='grid  grid-cols-1 md:grid-cols-2 gap-3'>
