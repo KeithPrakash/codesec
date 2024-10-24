@@ -21,7 +21,7 @@ useEffect( ()=>{
 const getData= async()=>{
 try{
   console.log(selected)
-    const response =  await axios.get(`http://localhost:3000/api/v1/category/${selected}`);
+    const response =  await axios.get(`https://codesec.onrender.com/api/v1/category/${selected}`);
    
     setData(response.data.data)
     console.log(data)

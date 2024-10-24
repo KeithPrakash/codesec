@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
     try{
           console.log(email,password ,"ko data")
             
-          const response = await  axios.post("http://localhost:3000/api/v1/user/login",{email,password});
+          const response = await  axios.post("https://codesec.onrender.com/api/v1/user/login",{email,password});
 
           if(response.status==200){
             console.log(response.data)

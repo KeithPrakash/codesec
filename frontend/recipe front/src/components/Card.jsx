@@ -9,7 +9,7 @@ const Card = ({ item, index }) => {
 const addItem=async({item})=>{
 
     try{
-        const response=  await axios.post('http://localhost:3000/api/v1/user/favorite/add',{
+        const response=  await axios.post('https://codesec.onrender.com/api/v1/user/favorite/add',{
           title:item.strMeal,
           image:item.strMealThumb,
           recipeId:item.idMeal         

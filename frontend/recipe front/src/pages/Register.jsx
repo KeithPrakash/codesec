@@ -23,7 +23,7 @@ const Register = () => {
          }
            setError(null)
         try{
-          const response=await axios.post('http://localhost:3000/api/v1/user/register',{
+          const response=await axios.post('https://codesec.onrender.com/api/v1/user/register',{
                 firstName,lastName,email,tel,password
         } ) 
       

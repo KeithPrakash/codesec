@@ -18,7 +18,7 @@ const Favourite = () => {
 
   const fetchData = async () => {
     try{
-         const response = await axios.get('http://localhost:3000/api/v1/user/favorite/list',{
+         const response = await axios.get('https://codesec.onrender.com/api/v1/user/favorite/list',{
            headers:{
                  Authorization: `Bearer ${getAuthToken()}`
          }}
@@ -33,7 +33,7 @@ const Favourite = () => {
      };
   const removeItem= async(id)=>{
     try{
-        const response = await axios.delete(`http://localhost:3000/api/v1/user/favorite/${id}`,
+        const response = await axios.delete(`https://codesec.onrender.com/api/v1/user/favorite/${id}`,
             {
                 headers:{
                       Authorization: `Bearer ${getAuthToken()}`
