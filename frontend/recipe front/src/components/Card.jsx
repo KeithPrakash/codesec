@@ -8,7 +8,6 @@ const Card = ({ item, index }) => {
 
 const addItem=async({item})=>{
 
-
     try{
         const response=  await axios.post('http://localhost:3000/api/v1/user/favorite/add',{
           title:item.strMeal,
