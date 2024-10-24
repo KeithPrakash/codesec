@@ -1,7 +1,9 @@
 import axios from 'axios'
 import  { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
-
+import { ToastContainer, toast } from 'react-toastify';
+import Card from '../components/Card'
+import 'react-toastify/dist/ReactToastify.css';
 const  categories=[
     {id:"1",category:"Beef"},
     {id:"2",category:"Chicken"},
@@ -13,12 +15,16 @@ const Home = () => {
 const [data, setData]=useState([])
 const [selected ,setSelected] =useState("Beef");
 
+
+
 useEffect( ()=>{
 const getData= async()=>{
 try{
-    const response =  await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${selected}`);
-    console.log(response.data)
-    setData(response.data)
+  console.log(selected)
+    const response =  await axios.get(`http://localhost:3000/api/v1/category/${selected}`);
+   
+    setData(response.data.data)
+    console.log(data)
 }catch(e){
 console.log(e)
 }
@@ -28,6 +34,7 @@ getData();
 },[selected])
   return (
   <div>
+  
  <Nav/>
 
 <div className='p-20 flex gap-5  mx-auto'>
@@ -41,12 +48,10 @@ getData();
 
 <div className='grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-4 lg:w-[80%] mx-auto'>
 {
-    data.meals? data.meals.map((item,index)=>(
+    data?.meals ? data.meals.map((item,index)=>(
 
-        <div key={index}>
-          <img src={item.strMealThumb} alt=""  className='rounded-xl'/>
-          <h3 className='font-semibold text-lg'>{item.strMeal}</h3>
-            </div>
+
+        <Card   item={item} key={index}/>
     ))   : <div>no items</div>
 }
 </div>

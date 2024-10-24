@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import Favourite from './pages/Favourite'
+import PrivateRoute from './util/PrivateRoute'
 
 function App() {
  
@@ -14,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/favourites" element={<Favourite/>}/>
+          <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
+          <Route path="/favourites" element={ <PrivateRoute><Favourite/></PrivateRoute>}/>
         </Routes>
   )
 }
