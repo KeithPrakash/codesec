@@ -41,5 +41,5 @@ app.use('/api/v1/category',recipeRoute);
 
 app.get('/',(req,res)=>{
 
-  res.json({message:"it works,test"}).statusCode(200)
+  res.json({message:"it works,test"})
 })

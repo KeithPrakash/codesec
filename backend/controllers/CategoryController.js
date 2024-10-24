@@ -5,14 +5,14 @@ import axios from 'axios';
 const getByCategory =async(req,res)=>{
 
     const { id } = req.params;
-           console.log("hittig")
+          
      try{
 
         const response =await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`)
 
-        res.json({data:response.data}).status(200)
+        res.status(200).json({data:response.data})
      }catch(error){
-        res.json({message:error.message}).status(500)
+        res.status(500).json({message:error.message})
      }
 }
 

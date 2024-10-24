@@ -22,7 +22,7 @@ const addFavorite = async (req, res) => {
         image,
       });
       await favorite.save();
-      res.json(favorite);
+      res.json(favorite);f
     } catch (error) {
       res.status(500).json({ error: 'Failed to add favorite' });
     }
