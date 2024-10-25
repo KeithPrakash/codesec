@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
   const [firstName,setFirstName]=useState(null);
   const [lastName,setLastName]=useState(null);
@@ -29,6 +30,7 @@ const Register = () => {
       
          console.log(response)
          if(response.status === 200){
+           toast.success("user creeated")
           navigate('/')
          }
       
@@ -43,7 +45,13 @@ const Register = () => {
       
   }
   return (
-    <div className='h-[100dvh] bg-slate-300 flex justify-center items-center'>
+
+    <>
+
+
+<ToastContainer/>
+<div className='h-[100dvh] bg-slate-300 flex justify-center items-center'>
+      <ToastContainer/>
        <div className='p-10  md:p-20 rounded-xl flex flex-col gap-8  bg-white '> 
         <div className='text-center text-2xl w-full'>  logo</div>
 
@@ -65,6 +73,8 @@ const Register = () => {
           <p className='text-sm'>Already Have an account? <span className='text-blue-400 underline'><Link to="/"> Login</Link></span></p>
        </div>
     </div>
+    </>
+  
   )
 }
 

@@ -37,22 +37,22 @@ getData();
   
  <Nav/>
 
-<div className='p-20 flex gap-5  mx-auto'>
+<div className=' p-2    md:p-20 flex gap-2 flex-wrap md:gap-5  mx-auto'>
 {
   categories.map((item ,index)=>(
 
-      <div key={index}      onClick={()=>setSelected(item.category)}     className={`py-3 px-5 rounded-full border-2  border-pink-500 text-slate ${item.category === selected ? 'bg-pink-500 text-white' : 'bg-white text-pink-500'}`}> {item.category} </div>
+      <div key={index}      onClick={()=>setSelected(item.category)}     className={` p-1 md:py-3  px:p-3 md:px-5 rounded-full border-2  border-pink-500 text-slate ${item.category === selected ? 'bg-pink-500 text-white' : 'bg-white text-pink-500'}`}> {item.category} </div>
   ))
 }
 </div>
 
-<div className='grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-4 lg:w-[80%] mx-auto'>
+<div className=' p-2 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-4 lg:w-[80%] mx-auto'>
 {
     data?.meals ? data.meals.map((item,index)=>(
 
 
         <Card   item={item} key={index}/>
-    ))   : <div>no items</div>
+    ))   : <div>loading ...</div>
 }
 </div>
   </div>

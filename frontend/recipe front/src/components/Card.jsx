@@ -27,10 +27,11 @@ const addItem=async({item})=>{
 }
   return (
    
-        <div key={index}  onClick={()=>addItem({item})} className='hover:scale-105 hover:shadow-lg' >
+        <div key={index}   className='hover:scale-105 hover:shadow-lg border shadow-sm' >
           <img src={item?.strMealThumb} alt=""  className='rounded-xl'/>
 
           <h3 className='font-semibold text-lg'>{item?.strMeal}</h3>
+          <button onClick={()=>addItem({item})} className='bg-pink-500 font-semibold text-white text-sm py-1 px-3 rounded-sm hover:bg-pink-300'>Add Favourties</button>
             </div>
   )
 }

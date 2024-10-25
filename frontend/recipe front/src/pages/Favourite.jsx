@@ -4,7 +4,7 @@ import Nav from '../components/Nav'
 import axios from 'axios'
 import FavCard from '../components/FavCard';
 import { toast } from 'react-toastify';
-
+import 'react-toastify/dist/ReactToastify.css';
 const Favourite = () => {
 
   const [data ,setData]=useState([]);
@@ -61,14 +61,14 @@ const Favourite = () => {
     <Nav/>
 
 
-    <div className='grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-4 lg:w-[80%] mx-auto pt-20'>
+    <div className=' p-2 grid grid-cols-2  md:grid-cols-3 lg:grid-cols-5 gap-4 lg:w-[80%] mx-auto pt-20'>
 {
-    data? data.map((item,index)=>(
+    data&& data.length > 0 ? data.map((item,index)=>(
 
 
         <FavCard   item={item} key={index}  removeItem={removeItem} />
 
-    ))   : <div>no items</div>
+    ))   : <div className='text-2xl  '>no items</div>
 }
 </div>
   </div>

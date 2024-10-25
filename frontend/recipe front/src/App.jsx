@@ -7,7 +7,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import Favourite from './pages/Favourite'
 import PrivateRoute from './util/PrivateRoute'
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
  
 
